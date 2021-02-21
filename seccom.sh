@@ -11,7 +11,7 @@ fi
 trap "" SIGINT
 echo
 echo
-echo "Willkommen im SecureCommunications Terminal auf ssh://ballardini.de"
+echo "Willkommen im SecureCommunications Terminal"
 echo "Wähle einen Menüpunkt"
 
 msg_scan() {
