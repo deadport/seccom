@@ -47,7 +47,7 @@ chatroom
 menu_3() {
 userpw=0
 userid=0
-secpawd=0
+secpwd=0
 user=0
 clear && main_screen
 }
