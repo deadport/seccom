@@ -16,7 +16,7 @@ echo "Willkommen im SecureCommunications Terminal"
 echo "Wähle einen Menüpunkt"
 
 msg_scan() {
-msgnum=$(ls -l /home/seccom/msg/*aesmsg* | wc -l)
+msgnum=$(ls -l ~/msg/*aesmsg* | wc -l)
 echo "$msgnum Nachrichten auf Server:"
 echo
 dat=1
@@ -50,10 +50,10 @@ menu_1() {
 echo
 echo "Nachricht: "
 read msgtxt
-cmsg=$(ls -l /home/seccom/msg/*aesmsg* | wc -l)
+cmsg=$(ls -l ~/msg/*aesmsg* | wc -l)
 let cmsg++
 date=$(date +%H:%M)
-echo "$user @ $date:  $msgtxt" | gpg --pinentry-mode=loopback --symmetric --cipher-algo AES-256 --no-symkey-cache --passphrase=$secpwd > /home/seccom/msg/msg_$cmsg.aesmsg
+echo "$user @ $date:  $msgtxt" | gpg --pinentry-mode=loopback --symmetric --cipher-algo AES-256 --no-symkey-cache --passphrase=$secpwd > ~/msg/msg_$cmsg.aesmsg
 chatroom
 }
 
