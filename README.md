@@ -10,3 +10,4 @@ Todo:
 - build sshfs-based client to enable client-side encryption for untrusted servers
 - check and refine key-storage
 - translate
+- dependency-check at the very beginning is complete bs at the moment
