@@ -32,15 +32,21 @@ sub_1() {
 echo -n "Bitte Wähle deine Nutzerkennung: "
 read user
 if [ -z $user ]; then echo "Leere Eingabe nicht zulässig!" && sub_1; fi
+echo -n "Benutzerkennwort (masked): "
+read -s userpw
+if [ -z $userpw ]; then echo "Leere Eingabe nicht zulässig!" && sub_1; fi
+userid=$(echo "$userpw $user" | sha256sum | head -c 5)
+user=$(echo "$user ($userid)")
 echo "Eingeloggt als: $user"
-echo "Stell sicher dass es das richtige Passwort ist, sonst siehst du keine Nachrichten."
-echo -n "Bitte nenne das vereinbarte Kennwort (masked): "
+echo -n "Bitte nenne den vereinbarten PSK [Chatroom] (masked): "
 read -s secpwd
 if [ -z $secpwd ]; then echo "Leere Eingabe nicht zulässig!" && sub_1; fi
 chatroom
 }
 
 menu_3() {
+userpw=0
+userid=0
 secpawd=0
 user=0
 clear && main_screen
