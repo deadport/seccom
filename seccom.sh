@@ -1,5 +1,6 @@
 #!/bin/bash
 #
+cd ~/
 if ! [ -e msg ]
 then
 mkdir msg
